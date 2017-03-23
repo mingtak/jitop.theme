@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="jitop.theme">
+<body>
+
+
+  <metal:row define-macro="zzzz">zzzz</metal:row>
+
+
+<!-- header -->
+  <metal:row define-macro="header">
+            <!--========== BEGIN HEADER ==========-->
+            <header id="header" class="header-main">
+
+                <!-- Begin Navbar -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+                  <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand page-scroll" href="index.html"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="page-scroll" href="#about-section">聯盟簡介</a></li>
+                            <li><a class="page-scroll" href="#services-section">服務項目</a></li>
+                            <!--li><a class="page-scroll" href="#case-section">成功案例</a></li-->  
+                            <li><a class="page-scroll" href="#portfolio-section">合作診所</a></li>
+                            <li><a class="page-scroll" href="#team-section">媒體報導</a></li>                            
+                            <li><a class="page-scroll" href="#contact-section">聯絡我們</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container -->
+                </nav>
+                <!-- End Navbar -->
+
+            </header>
+            <!-- ========= END HEADER =========-->
+  </metal:row>
+
+<!-- footer -->
+  <metal:row define-macro="footer">
+                <div class="footer">
+                    <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+                        <p class="copyright" style="font-family:微軟正黑體">台灣醫美通聯盟<br>
+                            Aesthetic &amp; Medical Alliance<br>
+                            電話：+886-2-8772-2895<br>
+                            橋締股份有限公司-策略聯盟事業部<br>
+                            地址：105北市復興北路2號A座3F-14<br>
+                            COPYRIGHT © 台灣醫美通聯盟</span></p>
+                    </div>
+                </div>
+         
+            <!-- End footer -->
+
+            <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
+  </metal:row>
+
+
+</body>
+</html>

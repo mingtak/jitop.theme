@@ -18,4 +18,14 @@
       directory="static"
       />
 
+  <!-- browser view -->
+  <browser:page
+      name="jitop_macro"
+      for="*"
+      class=".views.JitopMacro"
+      template="template/jitop_macro.pt"
+      layer="jitop.theme.interfaces.IJitopThemeLayer"
+      permission="zope2.View"
+  />
+
 </configure>
