@@ -1,0 +1,347 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="mingjing.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+about_items = portal['about'].getChildNodes()
+service_items = portal['service'].getChildNodes()
+showcase_items = portal['showcase'].getChildNodes()
+partner_items = portal['partner'].getChildNodes()
+media_items = portal['media'].getChildNodes()
+?>
+
+
+            <!--========== BEGIN HEADER ==========-->
+            <header id="header" class="header-main">
+
+                <!-- Begin Navbar -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+
+                  <div class="container">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand page-scroll" href="index.html"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="page-scroll" href="#about-section">聯盟簡介</a></li>
+                            <li><a class="page-scroll" href="#services-section">服務項目</a></li>
+                            <!--li><a class="page-scroll" href="#case-section">成功案例</a></li-->  
+                            <li><a class="page-scroll" href="#portfolio-section">合作診所</a></li>
+                            <li><a class="page-scroll" href="#team-section">媒體報導</a></li>                            
+                            <li><a class="page-scroll" href="#contact-section">聯絡我們</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container -->
+                </nav>
+                <!-- End Navbar -->
+
+            </header>
+            <!-- ========= END HEADER =========-->
+            
+            
+            
+            
+        	<!-- Begin text carousel intro section -->
+			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/slider-bg.jpg);">
+				
+				<div class="container">
+					<div class="caption text-center text-white" data-stellar-ratio="0.7">
+
+						<div id="owl-intro-text" class="owl-carousel">
+							<div class="item">
+								<h1><img src="img/11logo.png"/></h1>
+								<p><img src="img/slogan.png"></p>
+                                <div class="extra-space-l"></div>
+						  </div>
+						</div>
+					</div> 
+				  <!-- /.caption -->
+				</div> <!-- /.container -->
+
+			</section>
+			<!-- End text carousel intro section -->
+                
+                
+                
+                
+            <!-- Begin about section -->
+			<section id="about-section" class="page bg-style1">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 style="font-family:微軟正黑體">聯盟簡介</h2>
+                            <div class="devider"></div>
+                           
+                        </div>
+                    </div>
+                </div>
+              <!-- End page header-->
+
+                <!-- Begin rotate box-1 -->
+                <div class="rotate-box-1-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            
+                          <div class="col-md-6 col-sm-12">
+                                <a href="about.html#about" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
+                                    <div class="rotate-box-info">
+                                        <p><img src="img/aa-02.png" width="100%"></p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <a href="about2.html#about2" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
+                                    <div class="rotate-box-info">
+                                        <p><img src="img/aa-03.png" width="100%"></p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </div>
+                <div class="extra-space-l"></div>
+          </section>
+          <!-- End about section -->
+
+              
+          <!-- Begin Services -->
+            <section id="services-section" class="page text-center" >
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                           <h2 style="font-family:微軟正黑體">服務項目</h2>
+                          <div class="devider"></div>
+                            <p class="subtitle">&nbsp;</p>
+                            <p class="subtitle"><img src="img/pw0.png" width="20" height="33"><span style="font-family:微軟正黑體; font-size:32px; font-weight:bolder">四大特色服務與您一同創造營業額 </span></p>
+                            <p class="subtitle">&nbsp;</p>
+                            <p class="subtitle"><img src="img/p51.png" width="100%"></p>
+                            <p class="subtitle"><img src="img/p52.png" width="100%"></p>
+                            <p class="subtitle"><img src="img/p53.png" width="100%"></p>
+                            <p class="subtitle"><img src="img/p54.png" width="100%"></p>
+                      </div>
+                    </div>
+                </div>
+                <div class="rotate-box-2-wrapper">
+                    <div class="container">
+                        <div class="row">
+                      </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+            </section>
+            <!-- End Services -->
+              
+                
+          <!-- Begin Services -->
+                <div><img src="img/bg1.jpg" width="100%"></div>
+            <!-- End Services -->      
+                
+          <!-- Begin Portfolio -->
+            <section id="portfolio-section" class="page bg-style1">
+            	<div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio">
+                                <!-- Begin page header-->
+                                <div class="page-header-wrapper">
+                                    <div class="container">
+                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                                            <h2 style="font-family:微軟正黑體">合作診所</h2>
+
+                                          <div class="devider"></div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- End page header-->
+                                <div class="portfoloi_content_area" >
+                                    <div class="portfolio_menu" id="filters">
+                                        <ul>
+                                            <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
+                                            <li><a href="#porfolio_menu" data-filter=".websites">101時尚診所</a></li>
+                                            <li><a href="#porfolio_menu" data-filter=".webDesign" >元晨診所</a></li>
+                                            <li><a href="#porfolio_menu" data-filter=".appsDevelopment">尼斯診所</a></li>
+                                            <li><a href="#porfolio_menu" data-filter=".GraphicDesign">亞霈時尚診所</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="portfolio_content">
+                                        <div class="row"  id="portfolio">
+                                            <div class="col-xs-12 col-sm-4  websites">
+                                                <div class="portfolio_single_content">
+                                                    <img src="img/1.jpg" alt="title"/>
+                                                    <div>
+                                                        <a href="drbeauty101.html#clinic">101時尚診所</a>
+                                                        <span>drbeauty101.1655.com.tw</span>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                            <div class="col-xs-12 col-sm-4  webDesign">
+                                                <div class="portfolio_single_content">
+                                                    <img src="img/2.jpg" alt="title"/>
+                                                    <div>
+                                                        <a href="ycclinic.html#clinic">元晨診所</a>
+                                                        <span>ycclinic.com.tw</span>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                            <div class="col-xs-12 col-sm-4  appsDevelopment">
+                                                <div class="portfolio_single_content">
+                                                    <img src="img/3.jpg" alt="title"/>
+                                                    <div>
+                                                        <a href="nicebuty.html#clinic">尼斯診所</a>
+                                                        <span>www.nicebuty.com</span>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                            <div class="col-xs-12 col-sm-4  GraphicDesign">
+                                                <div class="portfolio_single_content">
+                                                    <img src="img/4.jpg" alt="title"/>
+                                                    <div>
+                                                        <a href="youngpretty.html#clinic">亞霈時尚診所</a>
+                                                        <span>www.youngpretty.com.tw</span>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End portfolio -->
+            
+            <!-- Begin testimonials -->
+            <section id="team-section">
+                <div id="testimonial-trigger" class="testimonial text-white parallax" data-stellar-background-ratio="0.5" style="">
+                    <div class="cover"></div>
+                    <div class="page-header-wrapper">
+                        <div class="container">
+                            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                              <h2 style="font-family:微軟正黑體;">媒體報導</h2>
+                                <div class="devider"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="testimonial-inner center-block text-center">
+                            <div id="owl-testimonial" class="owl-carousel">
+                                <div class="item">
+                                    <blockquote>
+                                        <p><img src="img/partners/tv1.jpg" style="float:left"><br>媒體報導<br>ET TODAY東森新聞雲<br>非侵入式醫美塑身 冷凍消除多餘脂肪<br><br><br><a href="tv.html#tv">more></a></p>
+                                    </blockquote>
+                                </div>
+                                <div class="item">
+                                    <blockquote>
+                                        <p><img src="img/partners/p0.jpg" style="float:left"><br>媒體報導<br>中華民國105年6月26日 經濟日報<br>酷塑冷凍減脂 雕塑好萊塢星模樣<br>連續三年獲NewBeauty票選為年度最佳減脂療程 瑪莉亞凱莉、布萊德彼特等公開分享體雕經驗<br><br><br><a href="p.html#tv">more></a></p>
+                                    </blockquote>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+              </div>
+            </section><br><br>
+          <!-- End testimonials -->
+                
+                
+                
+            <!-- Begin contact section -->
+			<section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5">
+            <div class="cover"></div>
+            
+                 <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2 style="font-family:微軟正黑體">聯絡我們</h2>
+                            <div class="devider"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
+                
+                <div class="contact wow bounceInRight" data-wow-delay="0.4s">
+                    <div class="container">
+                    	<div class="row">
+                        
+                            <div class="col-sm-6">
+                                <div class="contact-info">
+                                    <h4><img src="img/11logo.png"></h4>
+                                    <ul class="contact-address">
+			                            <li style="font-family:微軟正黑體"><i class="fa fa-map-marker fa-lg"></i>&nbsp; 105台北市中山區復興北路2號A座3F-14</li>
+			                            <li style="font-family:微軟正黑體"><i class="fa fa-phone"></i>&nbsp; +886-2-8772-2895</li>
+			                            <li style="font-family:微軟正黑體"><i class="fa fa-envelope"></i> ama.bridgecon@gmail.com</li>
+			                        </ul>
+                                </div>
+                            </div>
+                        
+                        	<div class="col-sm-6">
+                                <div class="contact-form">
+                                    <form role="form">
+                                        <div class="form-group" style="font-family:微軟正黑體">
+                                            <input type="text" class="form-control input-lg" placeholder="姓名" required>
+                                        </div>
+                                        <div class="form-group" style="font-family:微軟正黑體">
+                                            <input type="email" class="form-control input-lg" placeholder="E-mail" required>
+                                        </div>
+                                        <div class="form-group" style="font-family:微軟正黑體">
+                                            <textarea class="form-control input-lg" rows="5" placeholder="留言內容" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" style="font-family:微軟正黑體">確認送出</button>
+                                    </form>
+                                </div>	
+                            </div>
+                                                                                
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </div>
+            </section>
+            <!-- End contact section -->
+                
+
+                
+                <div class="footer">
+                    <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
+                        <p class="copyright" style="font-family:微軟正黑體">台灣醫美通聯盟<br>
+                            Aesthetic &amp; Medical Alliance<br>
+                            電話：+886-2-8772-2895<br>
+                            橋締股份有限公司-策略聯盟事業部<br>
+                            地址：105北市復興北路2號A座3F-14<br>
+                            COPYRIGHT © 台灣醫美通聯盟</p>
+                    </div>
+                </div>
+         
+            <!-- End footer -->
+
+            <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
+
+
+</metal:content-core>
+</metal:content-core>
+</body>
+</html>
