@@ -71,8 +71,8 @@ media_items = portal['media'].getChildNodes()
 
 						<div id="owl-intro-text" class="owl-carousel">
 							<div class="item">
-								<h1><img src="img/11logo.png"/></h1>
-								<p><img src="img/slogan.png"></p>
+								<h1><img src="${portal/absolute_url}/img/11logo.png"/></h1>
+								<p><img src="${portal/absolute_url}/img/slogan.png"></p>
                                 <div class="extra-space-l"></div>
 						  </div>
 						</div>
@@ -105,18 +105,11 @@ media_items = portal['media'].getChildNodes()
                     <div class="container">
                         <div class="row">
                             
-                          <div class="col-md-6 col-sm-12">
-                                <a href="about.html#about" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
+                            <div class="col-md-6 col-sm-12"
+                                 tal:repeat="item about_items">
+                                <a href="${item/absolute_url}#about" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                                     <div class="rotate-box-info">
-                                        <p><img src="img/aa-02.png" width="100%"></p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-6 col-sm-12">
-                                <a href="about2.html#about2" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
-                                    <div class="rotate-box-info">
-                                        <p><img src="img/aa-03.png" width="100%"></p>
+                                        <p><img src="${item/absolute_url}/@@images/image" width="100%"></p>
                                     </div>
                                 </a>
                             </div>
@@ -135,13 +128,7 @@ media_items = portal['media'].getChildNodes()
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
                            <h2 style="font-family:微軟正黑體">服務項目</h2>
                           <div class="devider"></div>
-                            <p class="subtitle">&nbsp;</p>
-                            <p class="subtitle"><img src="img/pw0.png" width="20" height="33"><span style="font-family:微軟正黑體; font-size:32px; font-weight:bolder">四大特色服務與您一同創造營業額 </span></p>
-                            <p class="subtitle">&nbsp;</p>
-                            <p class="subtitle"><img src="img/p51.png" width="100%"></p>
-                            <p class="subtitle"><img src="img/p52.png" width="100%"></p>
-                            <p class="subtitle"><img src="img/p53.png" width="100%"></p>
-                            <p class="subtitle"><img src="img/p54.png" width="100%"></p>
+<div tal:replace="structure python:portal['service']['service'].text.raw" />
                       </div>
                     </div>
                 </div>
@@ -155,7 +142,7 @@ media_items = portal['media'].getChildNodes()
               
                 
           <!-- Begin Services -->
-                <div><img src="img/bg1.jpg" width="100%"></div>
+                <div><img src="${portal/absolute_url}/img/bg1.jpg" width="100%"></div>
             <!-- End Services -->      
                 
           <!-- Begin Portfolio -->
@@ -179,10 +166,14 @@ media_items = portal['media'].getChildNodes()
                                     <div class="portfolio_menu" id="filters">
                                         <ul>
                                             <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".websites">101時尚診所</a></li>
+    <li tal:repeat="item partner_items">
+        <a href="#porfolio_menu" data-filter=".websites">${item/title}</a>
+    </li>
+<!--                                            <li><a href="#porfolio_menu" data-filter=".websites">101時尚診所</a></li>
                                             <li><a href="#porfolio_menu" data-filter=".webDesign" >元晨診所</a></li>
                                             <li><a href="#porfolio_menu" data-filter=".appsDevelopment">尼斯診所</a></li>
                                             <li><a href="#porfolio_menu" data-filter=".GraphicDesign">亞霈時尚診所</a></li>
+-->
                                         </ul>
                                     </div>
                                     <div class="portfolio_content">
