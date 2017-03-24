@@ -17,7 +17,7 @@
 
   <rules css:if-content="#portal-top">
     <!-- Attributes -->
-    <copy attributes="*" css:theme="html" css:content="html" />
+<!--    <copy attributes="*" css:theme="html" css:content="html" /> -->
     <!-- Base tag -->
     <before css:theme="title" css:content="base" />
     <!-- Title -->
@@ -30,14 +30,14 @@
   </rules>
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
-  <copy attributes="*" css:content="body" css:theme="body" />
-
+<!--  <copy attributes="*" css:content="body" css:theme="body" />
+-->
   <!-- cover content -->
   <replace css:content-children="#content-core" css:theme-children="div.body" />
 
 
   <!-- drop -->
   <drop css:content="#edit-zone"/>
-
+  <drop css:content="html head script"/>
 </rules>
 </rules>

@@ -15,38 +15,33 @@ tal:define="toc context/table_of_contents|nothing;">
 <?python
 from plone import api
 portal = api.portal.get()
-about_items = portal['about'].getChildNodes()
-service_items = portal['service'].getChildNodes()
-showcase_items = portal['showcase'].getChildNodes()
-partner_items = portal['partner'].getChildNodes()
-media_items = portal['media'].getChildNodes()
+about_items, service_items, showcase_items, partner_items, media_items = [],[],[],[],[]
+brain = portal['about'].getChildNodes()
+for item in brain:
+    if item.Type() == 'Page':
+        about_items.append(item)
+brain = portal['service'].getChildNodes()
+for item in brain:
+    if item.Type() == 'Page':
+        service_items.append(item)
+brain = portal['showcase'].getChildNodes()
+for item in brain:
+    if item.Type() == 'Page':
+        showcase_items.append(item)
+brain = portal['partner'].getChildNodes()
+for item in brain:
+    if item.Type() == 'Page':
+        partner_items.append(item)
+brain = portal['media'].getChildNodes()
+for item in brain:
+    if item.Type() == 'Page':
+        media_items.append(item)
 ?>
 
 
-<metal:macro use-macro="context/@@jitop_macro/macros/zzzz" />
+<metal:macro use-macro="context/@@jitop_macro/macros/header" />
+<metal:macro use-macro="context/@@jitop_macro/macros/main_slider" />
 
-        	<!-- Begin text carousel intro section -->
-			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(img/slider-bg.jpg);">
-				
-				<div class="container">
-					<div class="caption text-center text-white" data-stellar-ratio="0.7">
-
-						<div id="owl-intro-text" class="owl-carousel">
-							<div class="item">
-								<h1><img src="${portal/absolute_url}/img/11logo.png"/></h1>
-								<p><img src="${portal/absolute_url}/img/slogan.png"></p>
-                                <div class="extra-space-l"></div>
-						  </div>
-						</div>
-					</div> 
-				  <!-- /.caption -->
-				</div> <!-- /.container -->
-
-			</section>
-			<!-- End text carousel intro section -->
-                
-                
-                
                 
             <!-- Begin about section -->
 			<section id="about-section" class="page bg-style1">
@@ -71,7 +66,7 @@ media_items = portal['media'].getChildNodes()
                                  tal:repeat="item about_items">
                                 <a href="${item/absolute_url}#about" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                                     <div class="rotate-box-info">
-                                        <p><img src="${item/absolute_url}/@@images/image" width="100%"></p>
+                                        <p><img src="${item/absolute_url}/@@images/image/large" width="100%"></p>
                                     </div>
                                 </a>
                             </div>
@@ -99,6 +94,7 @@ media_items = portal['media'].getChildNodes()
                         <div class="row">
                       </div> <!-- /.row -->
                     </div> <!-- /.container -->
+                </div>
             </section>
             <!-- End Services -->
               
@@ -129,15 +125,15 @@ media_items = portal['media'].getChildNodes()
                                         <ul>
                                             <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
     <li tal:repeat="item partner_items">
-        <a href="#porfolio_menu" data-filter=".websites">${item/title}</a>
+        <a href="#porfolio_menu" data-filter=".${item/id}">${item/title}</a>
     </li>
                                         </ul>
                                     </div>
                                     <div class="portfolio_content">
                                         <div class="row"  id="portfolio">
-                                            <div class="col-xs-12 col-sm-4  websites" tal:repeat="item partner_items">
+                                            <div class="col-xs-12 col-sm-4 ${item/id}" tal:repeat="item partner_items">
                                                 <div class="portfolio_single_content">
-                                                    <img src="${item/absolute_url}/@@images/image" alt="title"/>
+                                                    <img src="${item/absolute_url}/@@images/image/preview" alt="title"/>
                                                     <div>
                                                         <a href="${item/absolute_url}#clinic">${item/title}</a>
                                                         <span>${item/description}</span>
@@ -170,17 +166,12 @@ media_items = portal['media'].getChildNodes()
                     <div class="container">
                         <div class="testimonial-inner center-block text-center">
                             <div id="owl-testimonial" class="owl-carousel">
-                                <div class="item">
+                                <div class="item" tal:repeat="item media_items">
                                     <blockquote>
-                                        <p><img src="img/partners/tv1.jpg" style="float:left"><br>媒體報導<br>ET TODAY東森新聞雲<br>非侵入式醫美塑身 冷凍消除多餘脂肪<br><br><br><a href="tv.html#tv">more></a></p>
+                                        <p><img src="${item/absolute_url}/@@images/image/preview" style="float:left">
+                                           <p tal:replace="structure item/description"></p><a href="${item/absolute_url}#tv">more></a></p>
                                     </blockquote>
                                 </div>
-                                <div class="item">
-                                    <blockquote>
-                                        <p><img src="img/partners/p0.jpg" style="float:left"><br>媒體報導<br>中華民國105年6月26日 經濟日報<br>酷塑冷凍減脂 雕塑好萊塢星模樣<br>連續三年獲NewBeauty票選為年度最佳減脂療程 瑪莉亞凱莉、布萊德彼特等公開分享體雕經驗<br><br><br><a href="p.html#tv">more></a></p>
-                                    </blockquote>
-                                </div>
-                               
                             </div>
                         </div>
                     </div>
@@ -211,7 +202,7 @@ media_items = portal['media'].getChildNodes()
                         
                             <div class="col-sm-6">
                                 <div class="contact-info">
-                                    <h4><img src="img/11logo.png"></h4>
+                                    <h4><img src="${portal/absolute_url}/img/11logo.png"></h4>
                                     <ul class="contact-address">
 			                            <li style="font-family:微軟正黑體"><i class="fa fa-map-marker fa-lg"></i>&nbsp; 105台北市中山區復興北路2號A座3F-14</li>
 			                            <li style="font-family:微軟正黑體"><i class="fa fa-phone"></i>&nbsp; +886-2-8772-2895</li>

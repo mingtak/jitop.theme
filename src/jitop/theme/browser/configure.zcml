@@ -24,7 +24,6 @@
       for="*"
       class=".views.JitopMacro"
       template="template/jitop_macro.pt"
-      layer="jitop.theme.interfaces.IJitopThemeLayer"
       permission="zope2.View"
   />
 
