@@ -31,6 +31,7 @@
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skin/cool-gray.css">
 		<link rel="Shortcut Icon" type="image/x-icon" href="favicon.ico" />
+            <script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 
     <body data-spy="scroll" data-target="#main-navbar">
@@ -316,7 +317,7 @@
                         
                         	<div class="col-sm-6">
                                 <div class="contact-form">
-                                    <form role="form">
+                                    <form role="form" action="contact_us">
                                         <div class="form-group" style="font-family:微軟正黑體">
                                             <input type="text" class="form-control input-lg" placeholder="姓名" required>
                                         </div>
@@ -326,7 +327,12 @@
                                         <div class="form-group" style="font-family:微軟正黑體">
                                             <textarea class="form-control input-lg" rows="5" placeholder="留言內容" required></textarea>
                                         </div>
-                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" style="font-family:微軟正黑體">確認送出</button>
+                                        <button type="submit"
+                                                class="btn wow bounceInRight g-recaptcha"
+                                                data-wow-delay="0.8s"
+                                                data-sitekey="6Lf1xhoUAAAAADyPkS_abxX8NDEFkwFnaGC5MsAR"
+                                                data-callback="YourOnSubmitFn"
+                                                style="font-family:微軟正黑體">確認送出</button>
                                     </form>
                                 </div>	
                             </div>

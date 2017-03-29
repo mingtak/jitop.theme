@@ -10,6 +10,9 @@
 
 <!-- header -->
   <metal:row define-macro="header">
+<?python
+from plone import api
+?>
             <!--========== BEGIN HEADER ==========-->
             <header id="header" class="header-main">
 
@@ -36,6 +39,8 @@
                             <li><a class="page-scroll" href="#portfolio-section">合作診所</a></li>
                             <li><a class="page-scroll" href="#team-section">媒體報導</a></li>                            
                             <li><a class="page-scroll" href="#contact-section">聯絡我們</a></li>
+                            <li tal:condition="python:not api.user.is_anonymous()">
+                                <a class="page-scroll" href="${portal/absolute_url}/folder_contents" style="color:red">管理後台</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->

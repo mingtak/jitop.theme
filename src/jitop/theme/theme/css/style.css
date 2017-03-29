@@ -1142,3 +1142,6 @@ p.subtitle {
 	transform: rotate(-45deg);
 }
 /* ===== End buttons ===== */
+
+#ama-submit { width:100%; background-color:#363940; padding: 6px 12px; height:40px}
+#ama-submit:hover { background-color: #676d75; color:#fff }

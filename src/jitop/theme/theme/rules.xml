@@ -6,7 +6,7 @@
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <!-- Include the backend theme -->
-  <xi:include href="++theme++barceloneta/backend.xml" />
+  <xi:include href="backend.xml" />
 
 
   <!-- Only theme front end pages -->
@@ -39,5 +39,6 @@
   <!-- drop -->
   <drop css:content="#edit-zone"/>
   <drop css:content="html head script"/>
+
 </rules>
 </rules>

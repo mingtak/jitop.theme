@@ -15,27 +15,12 @@ tal:define="toc context/table_of_contents|nothing;">
 <?python
 from plone import api
 portal = api.portal.get()
-about_items, service_items, showcase_items, partner_items, media_items = [],[],[],[],[]
-brain = portal['about'].getChildNodes()
-for item in brain:
-    if item.Type() == 'Page':
-        about_items.append(item)
-brain = portal['service'].getChildNodes()
-for item in brain:
-    if item.Type() == 'Page':
-        service_items.append(item)
-brain = portal['showcase'].getChildNodes()
-for item in brain:
-    if item.Type() == 'Page':
-        showcase_items.append(item)
-brain = portal['partner'].getChildNodes()
-for item in brain:
-    if item.Type() == 'Page':
-        partner_items.append(item)
-brain = portal['media'].getChildNodes()
-for item in brain:
-    if item.Type() == 'Page':
-        media_items.append(item)
+
+about_items = view.results['about']
+service_items = view.results['service']
+showcase_items = view.results['showcase']
+partner_items = view.results['partner']
+media_items = view.results['media']
 ?>
 
 
@@ -150,6 +135,62 @@ for item in brain:
                 </div>
             </section>
             <!-- End portfolio -->
+
+
+
+          <!-- Begin Portfolio -->
+            <section id="portfolio-section-2" class="page bg-style1">
+            	<div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portfolio">
+                                <!-- Begin page header-->
+                                <div class="page-header-wrapper">
+                                    <div class="container">
+                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                                            <h2 style="font-family:微軟正黑體">媒體報導</h2>
+
+                                          <div class="devider"></div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!-- End page header-->
+                                <div class="portfoloi_content_area" >
+                                    <div class="portfolio_menu" id="filters-2">
+                                        <ul>
+                                            <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
+    <li tal:repeat="item python:[('media', '影音專區'), ('news', '平面報導')]">
+        <a href="#porfolio_menu" data-filter=".${python:item[0]}">${python:item[1]}</a>
+    </li>
+                                        </ul>
+                                    </div>
+                                    <div class="portfolio_content">
+                                        <div class="row"  id="portfolio-2">
+                                            <div tal:repeat="item media_items"
+                                                 tal:attributes="class python:'col-xs-12 col-sm-4 %s' % ('media' if '影音專區' in item.Subject() else 'news')">
+                                                <div class="portfolio_single_content">
+                                                    <img src="${item/absolute_url}/@@images/image/preview" alt="title"/>
+                                                    <div>
+                                                        <a href="${item/absolute_url}#tv">${item/title}</a>
+                                                        <span>${item/description}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End portfolio -->
+
+
+
+
+
             
             <!-- Begin testimonials -->
             <section id="team-section">
@@ -213,17 +254,19 @@ for item in brain:
                         
                         	<div class="col-sm-6">
                                 <div class="contact-form">
-                                    <form role="form">
+                                    <form role="form" action="contact_us">
                                         <div class="form-group" style="font-family:微軟正黑體">
-                                            <input type="text" class="form-control input-lg" placeholder="姓名" required>
+                                            <input type="text" class="form-control input-lg" name="name" placeholder="姓名" required>
                                         </div>
                                         <div class="form-group" style="font-family:微軟正黑體">
-                                            <input type="email" class="form-control input-lg" placeholder="E-mail" required>
+                                            <input type="email" class="form-control input-lg" name="email" placeholder="E-mail" required>
                                         </div>
                                         <div class="form-group" style="font-family:微軟正黑體">
-                                            <textarea class="form-control input-lg" rows="5" placeholder="留言內容" required></textarea>
+                                            <textarea class="form-control input-lg" rows="5" name="text" placeholder="留言內容" required></textarea>
                                         </div>
-                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" style="font-family:微軟正黑體">確認送出</button>
+<input class="btn wow bounceInRight" value="確認送出" type="submit" id="ama-submit"
+       data-wow-delay="0.8s" style="font-family:微軟正黑體;"/>
+<span tal:replace="structure context/@@authenticator/authenticator"/>
                                     </form>
                                 </div>	
                             </div>
