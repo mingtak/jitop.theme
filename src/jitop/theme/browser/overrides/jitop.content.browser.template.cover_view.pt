@@ -21,6 +21,7 @@ service_items = view.results['service']
 showcase_items = view.results['showcase']
 partner_items = view.results['partner']
 media_items = view.results['media']
+news_items = view.results['news']
 ?>
 
 
@@ -117,7 +118,7 @@ media_items = view.results['media']
                                     <div class="portfolio_content">
                                         <div class="row"  id="portfolio">
                                             <div class="col-xs-12 col-sm-4 ${item/id}" tal:repeat="item partner_items">
-                                                <div class="portfolio_single_content">
+                                                <div class="portfolio_single_content" style="max-height:205px; overflow:hidden">
                                                     <img src="${item/absolute_url}/@@images/image/preview" alt="title"/>
                                                     <div>
                                                         <a href="${item/absolute_url}#clinic">${item/title}</a>
@@ -156,19 +157,19 @@ media_items = view.results['media']
                                 </div>
                                 <!-- End page header-->
                                 <div class="portfoloi_content_area" >
-                                    <div class="portfolio_menu" id="filters-2">
+                                    <div class="portfolio_menu" id="filters2">
                                         <ul>
                                             <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
-    <li tal:repeat="item python:[('media', '影音專區'), ('news', '平面報導')]">
+    <li tal:repeat="item python:[('mediaitem', '影音專區'), ('news', '平面報導')]">
         <a href="#porfolio_menu" data-filter=".${python:item[0]}">${python:item[1]}</a>
     </li>
                                         </ul>
                                     </div>
                                     <div class="portfolio_content">
-                                        <div class="row"  id="portfolio-2">
+                                        <div class="row"  id="portfolio2">
                                             <div tal:repeat="item media_items"
-                                                 tal:attributes="class python:'col-xs-12 col-sm-4 %s' % ('media' if '影音專區' in item.Subject() else 'news')">
-                                                <div class="portfolio_single_content">
+                                                 tal:attributes="class python:'col-xs-12 col-sm-4 %s' % ('mediaitem' if '影音專區' in item.Subject() else 'news')">
+                                                <div class="portfolio_single_content" style="max-height:205px; overflow:hidden">
                                                     <img src="${item/absolute_url}/@@images/image/preview" alt="title"/>
                                                     <div>
                                                         <a href="${item/absolute_url}#tv">${item/title}</a>
@@ -188,10 +189,6 @@ media_items = view.results['media']
             <!-- End portfolio -->
 
 
-
-
-
-            
             <!-- Begin testimonials -->
             <section id="team-section">
                 <div id="testimonial-trigger" class="testimonial text-white parallax" data-stellar-background-ratio="0.5" style="">
@@ -199,7 +196,7 @@ media_items = view.results['media']
                     <div class="page-header-wrapper">
                         <div class="container">
                             <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                              <h2 style="font-family:微軟正黑體;">媒體報導</h2>
+                              <h2 style="font-family:微軟正黑體;">最新消息</h2>
                                 <div class="devider"></div>
                             </div>
                         </div>
@@ -207,7 +204,7 @@ media_items = view.results['media']
                     <div class="container">
                         <div class="testimonial-inner center-block text-center">
                             <div id="owl-testimonial" class="owl-carousel">
-                                <div class="item" tal:repeat="item media_items">
+                                <div class="item" tal:repeat="item news_items">
                                     <blockquote>
                                         <p><img src="${item/absolute_url}/@@images/image/preview" style="float:left">
                                            <p tal:replace="structure item/description"></p><a href="${item/absolute_url}#tv">more></a></p>
@@ -219,9 +216,10 @@ media_items = view.results['media']
               </div>
             </section><br><br>
           <!-- End testimonials -->
-                
-                
-                
+
+
+
+
             <!-- Begin contact section -->
 			<section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5">
             <div class="cover"></div>

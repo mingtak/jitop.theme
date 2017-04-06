@@ -160,8 +160,22 @@ $('#filters').on( 'click', 'a', function() {
   $container.isotope({ filter: filterValue });
   return false;
 });
+
+
+var $container2 = $('#portfolio2');
+$container2.isotope({
+  itemSelector: '.col-sm-4',
+  layoutMode: 'fitRows'
+});
+$('#filters2').on( 'click', 'a', function() {
+  var filterValue = $(this).attr('data-filter');
+  $container2.isotope({ filter: filterValue });
+  return false;
 });
 
+
+
+});
 
 
 /////////////////////////
