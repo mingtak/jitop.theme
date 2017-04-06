@@ -90,7 +90,7 @@ news_items = view.results['news']
             <!-- End Services -->      
                 
           <!-- Begin Portfolio -->
-            <section id="portfolio-section" class="page bg-style1">
+            <section id="portfolio-section" class="page bg-style1" tal:define="area python:[('北區','north'), ('中區', 'middle'), ('南區', 'south')]">
             	<div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -110,14 +110,18 @@ news_items = view.results['news']
                                     <div class="portfolio_menu" id="filters">
                                         <ul>
                                             <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
-    <li tal:repeat="item partner_items">
-        <a href="#porfolio_menu" data-filter=".${item/id}">${item/title}</a>
+    <li tal:repeat="item area">
+        <a href="#porfolio_menu" data-filter=".${python:item[1]}">${python:item[0]}</a>
     </li>
                                         </ul>
                                     </div>
                                     <div class="portfolio_content">
                                         <div class="row"  id="portfolio">
-                                            <div class="col-xs-12 col-sm-4 ${item/id}" tal:repeat="item partner_items">
+
+<tal:item repeat="item partner_items">
+                                            <div class="col-xs-12 col-sm-4 ${python:'north' if '北區' in item.Subject() else ' '}
+                                                                           ${python:'middle' if '中區' in item.Subject() else ' '}
+                                                                           ${python:'south' if '南區' in item.Subject() else ' '}">
                                                 <div class="portfolio_single_content" style="max-height:205px; overflow:hidden">
                                                     <img src="${item/absolute_url}/@@images/image/preview" alt="title"/>
                                                     <div>
@@ -126,6 +130,7 @@ news_items = view.results['news']
                                                     </div>
                                                 </div>
                                             </div>
+</tal:item>
                                         </div>
                                     </div>
                                 </div>
@@ -221,7 +226,7 @@ news_items = view.results['news']
 
 
             <!-- Begin contact section -->
-			<section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5">
+			<section id="contact-section" class="page text-white parallax" data-stellar-backgroundratio="0.5">
             <div class="cover"></div>
             
                  <!-- Begin page header-->
@@ -240,7 +245,8 @@ news_items = view.results['news']
                     	<div class="row">
                         
                             <div class="col-sm-6">
-                                <div class="contact-info">
+<img src="${portal/absolute_url}/img/ccc.png" />
+<!--                                <div class="contact-info">
                                     <h4><img src="${portal/absolute_url}/img/11logo.png"></h4>
                                     <ul class="contact-address">
 			                            <li style="font-family:微軟正黑體"><i class="fa fa-map-marker fa-lg"></i>&nbsp; 105台北市中山區復興北路2號A座3F-14</li>
@@ -248,6 +254,7 @@ news_items = view.results['news']
 			                            <li style="font-family:微軟正黑體"><i class="fa fa-envelope"></i> ama.bridgecon@gmail.com</li>
 			                        </ul>
                                 </div>
+-->
                             </div>
                         
                         	<div class="col-sm-6">

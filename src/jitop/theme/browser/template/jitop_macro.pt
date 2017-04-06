@@ -33,13 +33,13 @@ from plone import api
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="#about-section">聯盟簡介</a></li>
-                            <li><a class="page-scroll" href="#services-section">服務項目</a></li>
-                            <!--li><a class="page-scroll" href="#case-section">成功案例</a></li-->  
-                            <li><a class="page-scroll" href="#portfolio-section">合作診所</a></li>
-                            <li><a class="page-scroll" href="#portfolio-section-2">媒體報導</a></li>                            
-                            <li><a class="page-scroll" href="#team-section">最新消息</a></li>
-                            <li><a class="page-scroll" href="#contact-section">聯絡我們</a></li>
+                            <li><a class="page-scroll" href="${portal/absolute_url}#about-section">聯盟簡介</a></li>
+                            <li><a class="page-scroll" href="${portal/absolute_url}#services-section">服務項目</a></li>
+                            <!--li><a class="page-scroll" href="${portal/absolute_url}#case-section">成功案例</a></li-->  
+                            <li><a class="page-scroll" href="${portal/absolute_url}#portfolio-section">合作診所</a></li>
+                            <li><a class="page-scroll" href="${portal/absolute_url}#portfolio-section-2">媒體報導</a></li>                            
+                            <li><a class="page-scroll" href="${portal/absolute_url}#team-section">最新消息</a></li>
+                            <li><a class="page-scroll" href="${portal/absolute_url}#contact-section">聯絡我們</a></li>
                             <li tal:condition="python:not api.user.is_anonymous()">
                                 <a class="page-scroll" href="${portal/absolute_url}/folder_contents" style="color:red">管理後台</a></li>
                         </ul>
@@ -85,6 +85,7 @@ from plone import api
                         <p class="copyright" style="font-family:微軟正黑體">台灣醫美通聯盟<br>
                             Aesthetic &amp; Medical Alliance<br>
                             電話：+886-2-8772-2895<br>
+                            信箱：ama.bridgecon@gmail.com<br>
                             橋締股份有限公司-策略聯盟事業部<br>
                             地址：105北市復興北路2號A座3F-14<br>
                             COPYRIGHT © 台灣醫美通聯盟

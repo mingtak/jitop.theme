@@ -272,9 +272,12 @@
         width: 100%;
     }
 
+
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
-    
+ .123 img{
+	width:100%;
+	 }
 }
