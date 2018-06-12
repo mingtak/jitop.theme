@@ -1156,3 +1156,5 @@ p.subtitle {
 
 #ama-submit { width:100%; background-color:#363940; padding: 6px 12px; height:40px}
 #ama-submit:hover { background-color: #676d75; color:#fff }
+
+#global_statusmessage { position:fixed; top:100px; right:0; padding: 10px 120px; z-index:1000; color:#f1e05d; font-size:20px}

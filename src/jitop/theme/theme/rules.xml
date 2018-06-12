@@ -13,6 +13,8 @@
   <rules css:if-content="body.frontend#visual-portal-wrapper">
 
   <theme href="index.html" />
+<!--  <notheme if-path="/login_form" />
+  <notheme if-path="/login" /> -->
   <notheme css:if-not-content="#visual-portal-wrapper" />
 
   <rules css:if-content="#portal-top">
@@ -39,6 +41,9 @@
   <!-- drop -->
   <drop css:content="#edit-zone"/>
   <drop css:content="html head script"/>
+
+  <!-- contact, message -->
+  <before css:content="#global_statusmessage" css:theme-children="body" />
 
 </rules>
 </rules>
